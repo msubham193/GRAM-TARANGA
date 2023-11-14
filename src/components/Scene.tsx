@@ -14,6 +14,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 
+interface Actions {
+  [key: string]: unknown; // or specify the type of your actions
+}
 type GLTFResult = GLTF & {
   nodes: {
     Object_96: THREE.SkinnedMesh;
@@ -192,7 +195,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     "/drone1/scene.gltf"
   ) as GLTFResult;
   console.log();
-  const { actions, names } = useAnimations<GLTFActions>(animations, group);
+  const { actions, names }:unknown = useAnimations<GLTFActions>(animations, group);
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
@@ -200,10 +203,11 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   useEffect(() => {
     const mixer = actions[names[0]].getMixer();
     mixer.timeScale = 1; // You can adjust this value to control the speed.
-  }, [names]);
+  }, [actions, names]);
 
-  useFrame((state, delta) => {
-    actions[names[0]].getMixer().update(delta);
+  useFrame((_state, delta) => {
+    const actionName = (names[0] || "") as string;
+    actions[actionName].getMixer().update(delta);
   });
   return (
     <group ref={group} {...props} dispose={null}>

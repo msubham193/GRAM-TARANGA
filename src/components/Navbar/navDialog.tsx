@@ -2,13 +2,14 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
+
   DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
+import { Textarea } from "../ui/textarea";
 
 interface props {
   open: boolean;
@@ -22,29 +23,49 @@ export function NavDialog({ open, setOpen }: props) {
   };
   return (
     <Dialog open={open} onOpenChange={onDialogOpen}>
-      <DialogContent className="sm:max-w-[425px] text-white">
+      <DialogContent className="sm:max-w-[625px] h-[400px] text-black bg-slate-50 font-roboto">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
+          <DialogTitle>Contact Us</DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+        <div className="grid  ">
+          <div className="flex gap-4">
+            <div className=" w-full">
+              <Input
+                id="name"
+                type="text"
+                placeholder="Your Name"
+                className="border-gray-400 focus:outline-none"
+              />
+            </div>
+            <div className="w-full ">
+              <Input
+                type="email"
+                id="username"
+                placeholder="Your Email"
+                className="border-gray-400"
+              />
+            </div>
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
+          <div className="w-full">
+            <Input
+              id="name"
+              placeholder="Subject"
+              className="border-gray-400"
+            />
+          </div>
+
+          <div className="w-full">
+            <Textarea placeholder="Message " className="border-gray-400" />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button
+            type="submit"
+            variant={"secondary"}
+            className="text-white hover:animate-in"
+          >
+            Save changes
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

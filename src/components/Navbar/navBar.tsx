@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/logo.jpg";
 import { Button } from "../ui/button";
 import { NavDialog } from "./navDialog";
 import StarsCanvas from "../canvas/Stars";
 const Navbar = () => {
+  
   const [open, setOpen] = useState(false);
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 700;
+      setIsScrolled(scrollPosition > scrollThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   console.log(open);
   const navLink = [
@@ -13,11 +30,7 @@ const Navbar = () => {
       name: "Home",
       link: "/home",
     },
-    {
-      id: 2,
-      name: "About Us",
-      link: "/about-us",
-    },
+
     {
       id: 3,
       name: "Our Services",
@@ -36,7 +49,11 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex justify-between w-full items-center z-40 px-24 bg-black p-5 fixed ">
+    <div
+      className={`flex justify-between w-full items-center transition-all duration-500 ease-in-out z-40 px-24 bg-black ${
+        isScrolled ? "p-1" : "p-8"
+      } fixed`}
+    >
       <div>
         <img src={logo} alt="" className=" w-32 object-contain" />
       </div>

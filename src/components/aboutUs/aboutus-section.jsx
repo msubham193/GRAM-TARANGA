@@ -6,7 +6,7 @@ import Drone3 from "../../assets/drone3.jpg";
 import { useRef } from "react";
 
 const AboutUsSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
 
   const isInView = useInView(ref, { once: true });
 

@@ -1,5 +1,4 @@
 import { OrbitControls } from "@react-three/drei";
-
 import { Model } from "./Scene";
 
 const Experience = () => {

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -11,12 +10,7 @@ import { Input } from "@/components/ui/input";
 
 import { Textarea } from "../ui/textarea";
 
-interface props {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export function NavDialog({ open, setOpen }: props) {
+export function NavDialog({ open, setOpen }) {
   const onDialogOpen = () => {
     setOpen(!open);
     console.log(open);

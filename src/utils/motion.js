@@ -1,4 +1,4 @@
-export const sideInFromLeft = (delay: number) => {
+export const sideInFromLeft = (delay) => {
   return {
     hidden: { x: -100, opacity: 0 },
     visible: {
@@ -12,7 +12,7 @@ export const sideInFromLeft = (delay: number) => {
   };
 };
 
-export const sideInFromRight = (delay: number) => {
+export const sideInFromRight = (delay) => {
   return {
     hidden: { x: 100, opacity: 0 },
     visible: {

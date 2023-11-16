@@ -1,4 +1,3 @@
-import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import HomePage from "./pages/home-page";
 

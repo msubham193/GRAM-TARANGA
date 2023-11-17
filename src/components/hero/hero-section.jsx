@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 const HeroSection = () => {
   return (
-    <div className="bg-black h-[750px] relative z-0 p-20  ">
+    <div className="bg-black h-[750px] w-screen relative z-0 p-20  ">
       <StarsCanvas />{" "}
       <Canvas camera={{ position: [1, 1.5, 3.5], fov: 80 }} shadows>
         <Experience />

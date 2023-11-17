@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import Card from "./card";
 
 import { motion, useInView } from "framer-motion";
+import { SectionWrapper } from "../../hoc";
 
 const ChooseUs = () => {
   const data = [
@@ -91,4 +92,4 @@ const ChooseUs = () => {
   );
 };
 
-export default ChooseUs;
+export default SectionWrapper(ChooseUs, "choose-us");

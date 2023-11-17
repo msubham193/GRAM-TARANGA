@@ -3,6 +3,7 @@ import Drone1 from "../../assets/drone1.svg";
 import Drone2 from "../../assets/drone2.svg";
 import Drone3 from "../../assets/drone3.jpg";
 import { useRef } from "react";
+import { SectionWrapper } from "../../hoc";
 
 const AboutUsSection = () => {
   const ref = useRef(null);
@@ -139,4 +140,4 @@ const AboutUsSection = () => {
   );
 };
 
-export default AboutUsSection;
+export default SectionWrapper(AboutUsSection, "about-us");

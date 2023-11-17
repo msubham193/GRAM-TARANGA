@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/logo.jpg";
 import { Button } from "../ui/button";
 import { NavDialog } from "./navDialog";
-import StarsCanvas from "../canvas/Stars";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -48,11 +48,11 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex justify-between w-full items-center transition-all duration-500 ease-in-out z-40 px-24 bg-black ${
+      className={`flex justify-between w-screen items-center transition-all duration-500 ease-in-out z-40 px-24 bg-black ${
         isScrolled ? "p-0 " : "p-6"
       } fixed`}
     >
-      <div>
+      <div className="" onClick={() => window.scrollTo(0, 0)}>
         <img src={logo} alt="" className=" w-32 object-contain" />
       </div>
 
@@ -78,7 +78,6 @@ const Navbar = () => {
         Contact Us
       </Button>
       <NavDialog open={open} setOpen={setOpen} />
-      <StarsCanvas />
     </div>
   );
 };

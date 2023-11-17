@@ -24,6 +24,7 @@ export function Model(props) {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
 
+    
   useEffect(() => {
     const mixer = actions[names[0]].getMixer();
     mixer.timeScale = 1; // You can adjust this value to control the speed.
@@ -34,7 +35,7 @@ export function Model(props) {
     actions[actionName].getMixer().update(delta);
   });
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} >
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"

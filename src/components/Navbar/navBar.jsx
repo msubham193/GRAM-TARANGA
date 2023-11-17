@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <div
       className={`flex justify-between w-full items-center transition-all duration-500 ease-in-out z-40 px-24 bg-black ${
-        isScrolled ? "p-0 " : "p-8"
+        isScrolled ? "p-0 " : "p-6"
       } fixed`}
     >
       <div>

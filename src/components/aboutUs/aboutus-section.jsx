@@ -1,4 +1,3 @@
-import { sideInFromRight } from "@/utils/motion";
 import { motion, useInView } from "framer-motion";
 import Drone1 from "../../assets/drone1.svg";
 import Drone2 from "../../assets/drone2.svg";
@@ -11,7 +10,7 @@ const AboutUsSection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="h-screen w-full p-10 mt-7">
+    <div className="h-full bg-black text-white  w-full p-10 ">
       <div className=" text-center ">
         {" "}
         <h1 className=" font-bold  font-poppins text-4xl">About Us</h1>
@@ -29,7 +28,7 @@ const AboutUsSection = () => {
         <div className="flex gap-20  justify-center p-10 ">
           <motion.div
             style={{
-              transform: isInView ? "none" : "translateX(-100px)",
+              transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
@@ -54,7 +53,7 @@ const AboutUsSection = () => {
           </motion.div>
           <motion.div
             style={{
-              transform: isInView ? "none" : "translateX(100px)",
+              transform: isInView ? "none" : "translateX(200px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
@@ -66,7 +65,7 @@ const AboutUsSection = () => {
         <div className="flex gap-20  justify-center p-10">
           <motion.div
             style={{
-              transform: isInView ? "none" : "translateX(-100px)",
+              transform: isInView ? "none" : "translateX(-300px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
@@ -74,7 +73,14 @@ const AboutUsSection = () => {
           >
             <img src={Drone2} alt="" className="h-[400px] w-[500px]" />
           </motion.div>
-          <motion.div variants={sideInFromRight(0.5)} className=" w-[40%]">
+          <motion.div
+            style={{
+              transform: isInView ? "none" : "translateX(300px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            className=" w-[40%]"
+          >
             Gram Tarang Inclusive Development Services Private Limited (GTIDS)
             is a certified Fintech Company incorporated under company’s act in
             April 2011. It is started by people with extensive experience in
@@ -95,7 +101,7 @@ const AboutUsSection = () => {
         <div className="flex gap-20  justify-center p-10">
           <motion.div
             style={{
-              transform: isInView ? "none" : "translateX(-100px)",
+              transform: isInView ? "none" : "translateX(-400px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
@@ -119,7 +125,7 @@ const AboutUsSection = () => {
           </motion.div>
           <motion.div
             style={{
-              transform: isInView ? "none" : "translateX(100px)",
+              transform: isInView ? "none" : "translateX(400px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}

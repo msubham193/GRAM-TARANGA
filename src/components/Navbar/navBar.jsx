@@ -4,7 +4,6 @@ import { Button } from "../ui/button";
 import { NavDialog } from "./navDialog";
 import StarsCanvas from "../canvas/Stars";
 const Navbar = () => {
-  
   const [open, setOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const scrollThreshold = 700;
+      const scrollThreshold = 600;
       setIsScrolled(scrollPosition > scrollThreshold);
     };
 
@@ -23,7 +22,6 @@ const Navbar = () => {
     };
   }, []);
 
-  console.log(open);
   const navLink = [
     {
       id: 1,
@@ -51,7 +49,7 @@ const Navbar = () => {
   return (
     <div
       className={`flex justify-between w-full items-center transition-all duration-500 ease-in-out z-40 px-24 bg-black ${
-        isScrolled ? "p-1" : "p-8"
+        isScrolled ? "p-0 " : "p-8"
       } fixed`}
     >
       <div>

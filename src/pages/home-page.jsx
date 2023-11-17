@@ -2,6 +2,7 @@ import AboutUsSection from "@/components/aboutUs/aboutus-section";
 import HeroSection from "@/components/hero/hero-section";
 
 import ChooseusSection from "../components/chooseUs/chooseus-Section";
+import FooterSection from "../components/footer/footer-section";
 
 const HomePage = () => {
   return (
@@ -42,6 +43,7 @@ const HomePage = () => {
           </g>
         </svg>
       </a>
+      <FooterSection />
     </div>
   );
 };

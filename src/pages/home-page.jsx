@@ -4,7 +4,7 @@ import ChooseUs from "../components/chooseUs/chooseus-Section";
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="bg-black">
       <HeroSection />
       <ChooseUs />
       <AboutUsSection />

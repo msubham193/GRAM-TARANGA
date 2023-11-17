@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Card from "./card";
+
+import { motion, useInView } from "framer-motion";
 
 const ChooseUs = () => {
   const data = [
@@ -24,27 +26,57 @@ const ChooseUs = () => {
     },
   ];
 
-  data.map((d) => {
-    console.log(d.title);
-  });
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="bg-black">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate="visible"
+      className="bg-black mt-10"
+    >
       <section
         id="features"
         className="relative block px-6 py-10 md:py-20 md:px-10   "
       >
         <div className="relative mx-auto max-w-5xl text-center">
-          <span className="text-gray-300 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
-            Why choose us
-          </span>
-          <h2 className="block w-full bg-gradient-to-b from-blue-700 to-gray-700 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
-            Build a Website That Your Customers Love
-          </h2>
-          <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-500">
+          <motion.span
+            style={{
+              transform: isInView ? "none" : "translateX(100px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            initial="initial"
+            className="text-gray-300 my-3 flex items-center justify-center font-medium uppercase tracking-wider"
+          >
+            Why choose
+          </motion.span>
+          <motion.h2
+            style={{
+              transform: isInView ? "none" : "translateX(-100px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            initial="initial"
+            className="block w-full bg-gradient-to-b from-blue-700 to-gray-600 bg-clip-text font-bold text-transparent text-3xl sm:text-3xl"
+          >
+            GRAM TARANG INCLUSIVE DEVELOPMENT SERVICES
+          </motion.h2>
+          <motion.p
+            style={{
+              transform: isInView ? "none" : "translateY(100px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            initial="initial"
+            className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-500"
+          >
             Our templates allow for maximum customization. No technical skills
             required – our intuitive design tools let you get the job done
             easily.
-          </p>
+          </motion.p>
         </div>
 
         <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -55,7 +87,7 @@ const ChooseUs = () => {
           <Card title={data[2].title} description={data[2].description} />
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

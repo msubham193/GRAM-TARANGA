@@ -4,7 +4,7 @@ import StarsCanvas from "../canvas/Stars";
 const Card = ({ title, description }) => {
   console.log(title);
   return (
-    <div className="rounded-md hover:scale-105 transition-all duration-300 relative z-0 border border-neutral-800 bg-black p-8 text-center shadow">
+    <div className="rounded-md font-roboto hover:scale-105 transition-all duration-300 relative z-0 border border-neutral-800 bg-black p-8 text-center shadow">
       <div
         className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border "
         style={{
@@ -29,7 +29,7 @@ const Card = ({ title, description }) => {
           <polyline points="13 3 13 10 19 10 11 21 11 14 5 14 13 3"></polyline>
         </svg>
       </div>
-      <h3 className="mt-6 text-gray-400">{title}</h3>
+      <h3 className="mt-6 text-gray-300 text-lg font-bold">{title}</h3>
       <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
         {description}
       </p>

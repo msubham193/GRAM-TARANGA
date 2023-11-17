@@ -3,6 +3,30 @@ import React from "react";
 import Card from "./card";
 
 const ChooseUs = () => {
+  const data = [
+    {
+      id: 1,
+      title: "Expertise",
+      description:
+        "Our team of skilled professionals possesses a deep understanding of drone data processing, ensuring the highest level of accuracy and quality in the results.",
+    },
+    {
+      id: 2,
+      title: "Cutting-Edge Technology",
+      description:
+        " We utilize the latest software and hardware, enabling efficient and precise data processing",
+    },
+    {
+      id: 3,
+      title: "Custom Solutions",
+      description:
+        "We tailor our services to meet your specific project requirements, offering flexibility and personalized results",
+    },
+  ];
+
+  data.map((d) => {
+    console.log(d.title);
+  });
   return (
     <div className="bg-black">
       <section
@@ -24,12 +48,12 @@ const ChooseUs = () => {
         </div>
 
         <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
-          <Card />
-          <Card />
-          <Card />
-        </div>
+          <Card title={data[0].title} description={data[0].description} />
 
-        
+          <Card title={data[1].title} description={data[1].description} />
+
+          <Card title={data[2].title} description={data[2].description} />
+        </div>
       </section>
     </div>
   );
